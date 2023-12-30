@@ -1,4 +1,4 @@
-/* DataSet Date and Profit/Losses*/
+/* DataSet - Date and Profit/Losses*/
 
 var finances = [
   ['Jan-2010', 867884],
@@ -88,4 +88,45 @@ var finances = [
   ['Jan-2017', 138230],
   ['Feb-2017', 671099],
 ];
+
+
+
+/****** Javascript code starts ****/
+
+const consoleFinanceData = (array) => {
+
+  let sum = array[0][1];
+  let length = array.length;
+
+
+  console.log('Financial Analysis \n---------------------------------- \n')
+
+
+  for (let i = 1; i < array.length; i++) {
+    const currentNumber = array[i];
+    const currentMonth = currentNumber[0];
+    const currentValue = currentNumber[1];
+
+    const prevNumber = finances[i - 1];
+    const prevMonth = prevNumber[0];
+    const prevValue = prevNumber[1];
+
+    const diff = currentValue - prevValue;
+
+    sum += currentValue;
+
+  }
+
+  // The total number of months included in the dataset.
+  console.log("Total Months: " + length);
+
+  // The total Value(sum) included in the dataset.
+  console.log("Total: " + "$" + sum);
+
+}
+
+// Calling function for all the outputs in Console
+consoleFinanceData(finances);
+
+
 
