@@ -47,7 +47,7 @@ Complete page with console result: ![Alt text](images/FinancialAnalysis3.png)
 
 
 
-## Git Hub page - 
+## Git Hub page - https://github.com/venkatdangeti/Console-Finances.git
 
-## deployed site page - 
+## deployed site page - https://venkatdangeti.github.io/Console-Finances/
 
