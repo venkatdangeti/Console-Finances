@@ -41,7 +41,7 @@ When we open the code in the browser, resulting analysis should look similar to 
 
 Main Page : ![Alt text](images/FinancialAnalysis1.png)
 
-Result Console : ![Alt text](images/FinancialAnalsysis2.png)
+Result Console : ![Alt text](images/FinancialAnalysis2.png)
 
 Complete page with console result: ![Alt text](images/FinancialAnalysis3.png)
 
