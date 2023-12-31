@@ -1,4 +1,4 @@
-/* DataSet - Date and Profit/Losses*/
+/* DataSet Date and Profit/Losses*/
 
 var finances = [
   ['Jan-2010', 867884],
@@ -93,13 +93,29 @@ var finances = [
 
 /****** Javascript code starts ****/
 
-const consoleFinanceData = (array) => {
+const calculateData = (array) => {
+  let highestGain = -Infinity;
+  let dateAndAmountGain = "";
+  let Amountgain = "";
+
+  let worstGain = +Infinity;
+  let dateAndAmountLose = "";
+  let Amountloss = "";
 
   let sum = array[0][1];
   let length = array.length;
 
 
   console.log('Financial Analysis \n---------------------------------- \n')
+
+
+  let totalGain = 0;
+  let totalLose = 0;
+  let average = 0;
+  let average1 = 0;
+  let totalaverage = 0;
+
+
 
 
   for (let i = 1; i < array.length; i++) {
@@ -115,7 +131,25 @@ const consoleFinanceData = (array) => {
 
     sum += currentValue;
 
+    average += diff;
+
+    average1 = +average;
+
+    if (diff > highestGain) {
+      highestGain = diff;
+      Amountgain = `Greatest Increase in Profits/Losses: ${currentMonth} $(${highestGain})`;
+    }
+
+
+    if (diff < worstGain) {
+      worstGain = diff;
+      Amountloss = `Greatest Decrease in Profits/Losses: ${currentMonth} $(${worstGain})`;
+    }
+
+
   }
+  // Average calculation
+  totalaverage += average1 / (length - 1);
 
   // The total number of months included in the dataset.
   console.log("Total Months: " + length);
@@ -123,10 +157,20 @@ const consoleFinanceData = (array) => {
   // The total Value(sum) included in the dataset.
   console.log("Total: " + "$" + sum);
 
+  // The Average Change included in the dataset.
+  console.log("Average Change: " + totalaverage.toFixed(2));
+
+  // The  Greatest Increase in Profits
+  console.log(Amountgain);
+
+  // Greatest Decrease in Losses
+  console.log(Amountloss);
 }
 
-// Calling function for all the outputs in Console
-consoleFinanceData(finances);
+/* Java code ends here */
+
+// function calling for all the outputs in Console
+calculateData(finances);
 
 
 
